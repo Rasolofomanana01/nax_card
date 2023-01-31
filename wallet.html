@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wallet.css">
+    <!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Facebook-card</title>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="cardHolder">
+          <div class="header">
+            <div class="heading center">NAX-CASH</div>
+            <div class="stepHeading center">ADS credit Card</div>
+            <div class="card">
+              <div class="top part">
+                <i class='bx bxl-facebook-circle' ></i>
+                <i class='bx bxl-visa ' ></i>
+                
+              </div>
+              <div class="middle part">
+                <div class="infocontent number vcenter">
+                  <div  id="num" class="num vcenter"> </div>
+                </div>
+              </div>
+              <div class="bottom part">
+                <div class="holderInfo">
+                   <div class="infoheader vcenter">CARD HOLDER</div>
+                  <div class="infocontent name vcenter"id="name"></div>
+                </div>
+                <div class="expDate">
+                  <div class="infoheader vcenter">EXP</div>
+                  <div  class="infocontent date vcenter">
+                    <span id="exp-1"></span>
+                    /
+                    <span id="exp-2"></span>
+                  </div>
+                </div>
+                <div class="expDate">
+                    <div class="infoheader vcenter">CVV</div>
+                    <div id="cvv" class="infocontent date vcenter"></div>
+                  </div>
+              </div>
+              <div  class="Info">
+                <i id="open_form" class='bx bxs-add-to-queue'></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="status vcenter"> 
+
+            <i class='bx bxs-check-circle' aria-hidden="true" ></i>
+         Code Postal :  <span>02090</span>
+        </div>
+        <h5 class="center">Payment Active</h5>
+        <div class="options vcenter">
+          <div class="opt">
+            <div class="icon center">
+              <i class='bx bxl-facebook-circle' ></i>
+            </div>
+            <div class="optname center">FB ADS</div>
+          </div>
+        
+        </div>
+        <div class="payment vcenter">
+          <div class="amount">
+            <div class="infoheader vcenter">Solde actuel</div>
+            <div class="infocontent val vcenter">$ <span id="solde">0</span></div>
+          </div>
+          <div class="button center">
+            <i class='bx bxs-add-to-queue'></i>
+          </div>
+        </div>
+      </div>
+      <div class="forl-container">
+        <form>
+            <div class="form">
+                <label for="">Nom :</label>
+                <input id="nameInput" type="text">
+            </div>
+            <div class="form">
+                <label for="">Numéro :</label>
+                <input id="inpunum" type="text">
+            </div>
+            <div class="form">
+                <label for="">Expiration :</label>
+                <input id="expinput-1" class="ip" type="text">
+                <input id="expinput-2" class="ip" type="text">
+            </div>
+            <div class="form">
+                <label for="">CVV:</label>
+                <input id="Cvvinput" type="text">
+            </div>
+            <div class="form">
+              <label for="">Solde:</label>
+              <input id="inpsolde" type="text">
+          </div>
+
+
+        </form>
+    </div>
+    <script >
+      const cardnum= document.getElementById('num'),
+inputnum = document.getElementById('inpunum'),
+namechange = document.getElementById('name'),
+inputnam = document.getElementById('nameInput'),
+exp1 = document.getElementById('exp-1'),
+exp2 = document.getElementById('exp-2'),
+inputexp1 = document.getElementById('expinput-1'),
+inputexp2 = document.getElementById('expinput-2'),
+cvvinput = document.getElementById('Cvvinput'),
+cvv = document.getElementById('cvv'),
+inputsold = document.getElementById('inpsolde'),
+sold = document.getElementById('solde')
+;
+
+
+// solde
+inputsold.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
+
+	inputsold.value = inputValue;
+	sold.textContent = inputValue.replace(/\s/g, '') ;
+	
+  
+	if(inputValue == ''){
+		sold.textContent = '0';
+	}
+
+});
+//cvv
+cvvinput.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
+
+	cvvinput.value = inputValue;
+	cvv.textContent = inputValue;
+  
+	if(inputValue == ''){
+		cvv.textContent = '000';
+	}
+
+});
+//expiration date
+
+inputexp1.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
+
+	inputexp1.value = inputValue;
+	exp1.textContent = inputValue;
+  
+	if(inputValue == ''){
+		exp1.textContent = '00';
+	}
+
+});
+
+inputexp2.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
+
+	inputexp2.value = inputValue;
+	exp2.textContent = inputValue;
+  
+	if(inputValue == ''){
+		exp2.textContent = '00';
+	}
+
+});
+
+
+
+//end
+inputnam.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
+
+	inputnam.value = inputValue;
+	namechange.textContent = inputValue;
+  
+	if(inputValue == ''){
+		namechange.textContent = 'Fernando 0111';
+	}
+
+});
+
+//inout number value
+inputnum.addEventListener('keyup', (e) => {
+	let inputValue = e.target.value;
+
+	inputnum.value = inputValue
+	// Reject Spaces
+	.replace(/\s/g, '') 
+	// Reject letters
+	.replace(/\D/g, '')
+	// Place an space each four numbers
+	.replace(/([0-9]{4})/g, '$1 ')
+	// Delete the last space
+	.trim();
+
+	cardnum.textContent = inputValue;
+
+	if(inputValue == ''){
+		cardnum.textContent = '#### #### #### ####';
+	}
+
+	if(inputValue[0] == 4){
+		brandLogo.innerHTML = '';
+		const image = document.createElement('img');
+		image.src = 'https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/logos/visa.png';
+		brandLogo.appendChild(image);
+	} else if(inputValue[0] == 5){
+		brandLogo.innerHTML = '';
+		const image = document.createElement('img');
+		image.src = 'https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/logos/mastercard.png';
+		brandLogo.appendChild(image);
+	}
+
+});
+    </script>
+    <script src="wallet.js"></script>>
+</body>
+</html>

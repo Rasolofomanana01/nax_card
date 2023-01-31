@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+  }
+  body{
+    background:white;
+  }
+  button{
+    width: 10rem;
+    padding: 10px;
+    background: #6480ef;
+    color: white;
+    border: none;
+  }
+  button:hover{
+    background: transparent;
+    border: 2px solid #6480ef;
+    color: wheat;
+  }
+  .mainContainer {
+    margin: 0 auto;
+    margin-top: 0;
+    
+  }
+  .cardHolder {
+    height: 300px;
+ 
+  /*   border-bottom-left-radius:50%;
+    border-bottom-right-radius:50%; */
+  }
+  .center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .vcenter{
+    display:flex;
+    align-items:center;
+  }
+  .heading{
+    height:40px;
+    font-size:14px;
+    letter-spacing:2px;
+    color:rgb(134, 131, 131);
+  }
+  .stepHeading{
+    height:20px;
+    font-size:16px;
+    font-weight:bolder;
+    letter-spacing:2px;
+    color:#6480ef;
+  }
+  .card{
+    height:180px;
+    width:280px;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    margin:0 auto;
+    border-radius:1.2em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top:25px;
+    padding:12px 20px;
+  }
+  .card > .part{
+    height:50px;
+    margin-bottom:4px;
+  }
+  .card > .top{
+    display:flex;
+    justify-content:space-between;
+  }
+ 
+  .card > .top > i:nth-child(1){
+    font-size: 30px;
+    color: #6480ef;
+  }
+  .card > .top > i:nth-child(2){
+    font-size: 40px;
+    color: #dbdfec;
+  }
+  .infoheader{
+    height:20px;
+    font-size:9px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#95a5a6
+  }
+  .card > .middle > .infocontent{
+    display: flex;
+    gap: 1rem;
+    justify-content:space-between;
+    height:30px;
+  }
+  .number{
+    width:250px;
+    color: white;
+  }
+  .Info{
+  margin-left: 6rem;
+  
+  margin-top: -0.6rem;
+  }
+  .Info i{
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-size: 20px;
+    color:#6480ef ;
+    cursor: pointer;
+    background: white;
+  }
+  /*FORM-----*/
+ .forl-container {
+    display: block;
+    align-self: center;
+    margin-top: 4rem;
+    justify-content: center;
+    margin-left: 2rem;
+ }
+
+ .forl-container form label{
+    display: block;
+    color: #3b3e41;
+	-webkit-text-stroke: 0.1px #6e7881;
+	margin-bottom: 5px;
+	font-size: 16px;
+ }
+ .forl-container form input{
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-size: 18px;
+    height: 30px;
+    width: 80%;
+    padding: 5px 12px;
+    transition: .3s ease all;
+    border-radius: 5px;
+ }
+ .forl-container form input:hover{
+    border-bottom: 2px solid #16a085;
+    background: transparent;
+    box-shadow: none;
+ }
+ .forl-container form .ip{
+    width: 120px;
+ }
+
+
+
+  /*end*/
+  .card > .middle > .infocontent > .num{
+    height:25px;
+    font-size:17px;
+    letter-spacing:2px;
+    font-weight:bolder;
+  }
+  .card > .bottom{
+    display:flex;
+    justify-content:space-between
+  }
+  .holderInfo{
+    width:150px;
+  }
+  .holderInfo > .name,.expDate > .date{
+    font-size:12px;
+    font-weight:bolder;
+    color: white;
+    letter-spacing:2px;
+  }
+ 
+  .status{
+    height:35px;
+    width:300px;
+    margin:0 auto;
+    margin-top:16px;
+    padding:0 16px;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:bolder;
+  }
+  .status > i{
+    color:#16a085;
+    margin-right:20px;
+    font-size:16px;
+  }
+  .status > span{
+    color:#6480ef;
+    margin-right:20px;
+    font-size:16px;
+  }
+  h5{
+    width:220px;
+    margin:0 auto;
+    padding:8px;
+    margin-top:14px;
+    border-bottom:2px solid #bdc3c7;
+    letter-spacing:2px;
+    font-size:12px;
+    margin-bottom:12px;
+  }
+  .options{
+    width:250px;
+    height:75px;
+    margin:0 auto;
+    justify-content:space-between;
+  }
+  .options > .opt{
+    height:75px;
+    width:75px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius:5px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .options > .opt > .icon i{
+    height:30px;
+    color: #16a085;
+    font-size:20px;
+  }
+
+  .optname{
+    height:30px;
+    font-size:10px;
+    color:#6480ef;
+    letter-spacing:2px;
+    font-weight:bolder
+  }
+  .payment{
+    display: flex;
+    gap: 8rem;
+    height:80px;
+    position:relative;
+    top: 24px;
+    box-shadow: rgba(128, 127, 127, 0.2) 0px 2px 8px 0px;
+    justify-content: center;
+    align-items: center;
+  }
+  .val{
+    height:40px;
+    font-size:24px;
+    font-weight:bolder;
+    letter-spacing:2px;
+    color:#6480ef;
+  }
+  .button{
+    color:#6480ef;
+    font-weight:bolder;
+    letter-spacing:2px;
+  }
+  .button i{
+    font-size: 25px;
+  }
